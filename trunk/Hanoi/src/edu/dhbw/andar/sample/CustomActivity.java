@@ -88,13 +88,13 @@ public class CustomActivity extends AndARActivity{
 		    	//it works! Huhu!
 		    		//Huhuhuhu!
 		    	Looper.prepare(); // the compiler suggested that - it seems it was right.	
-		    
+		    HttpHelper hh = new HttpHelper("http://192.168.1.2/server/");
 		    	while(true){
 		    		try {
 		    			
 					Thread.sleep(500);
 					if(someObject!=null){
-						int temp = HttpHelper.getContent();
+						int temp = hh.getContent();
 
 						
 						if(temp>-1){
@@ -102,7 +102,7 @@ public class CustomActivity extends AndARActivity{
 							someObject.wolny=!someObject.wolny;
 							someObject.stackNum = temp;
 //							HttpHelper.setNull();
-							HttpHelper.setNull(); // z obydwoma tak sobie
+							hh.setNull(); // z obydwoma tak sobie
 						}
 					//	else
 					//		someObject.wolny=false;
